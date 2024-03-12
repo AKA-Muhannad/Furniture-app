@@ -3,12 +3,13 @@ import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
+import { SIZES } from "./constants";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    regular: require("./assets/fonts/RobotoMono-Regular.ttf"),
-    light: require("./assets/fonts/RobotoMono-Light.ttf"),
-    bold: require("./assets/fonts/RobotoMono-Bold.ttf"),
+    regular: require("./assets/fonts/IBMPlexSans-Regular.ttf"),
+    light: require("./assets/fonts/IBMPlexSans-Light.ttf"),
+    bold: require("./assets/fonts/IBMPlexSans-Bold.ttf"),
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -36,6 +37,6 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontFamily: "regular",
-    fontSize: 15,
+    fontSize: SIZES.medium,
   },
 });
