@@ -4,12 +4,21 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import { SIZES } from "./constants";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomTabNavigation } from "./navigation/BottomTabNavigation";
+import { Cart } from "./screens";
+
+// To manage the navigation
+const Stack = createBottomTabNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    regular: require("./assets/fonts/IBMPlexSans-Regular.ttf"),
-    light: require("./assets/fonts/IBMPlexSans-Light.ttf"),
-    bold: require("./assets/fonts/IBMPlexSans-Bold.ttf"),
+    Regular: require("./assets/fonts/IBMPlexSans-Regular.ttf"),
+    Light: require("./assets/fonts/IBMPlexSans-Light.ttf"),
+    Bold: require("./assets/fonts/IBMPlexSans-Bold.ttf"),
+    SemiBold: require("./assets/fonts/IBMPlexSans-SemiBold.ttf"),
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -19,24 +28,19 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>
-        Open up App.tsx to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Bottom Navigation"
+          component={BottomTabNavigation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={Cart}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  textStyle: {
-    fontFamily: "regular",
-    fontSize: SIZES.medium,
-  },
-});
