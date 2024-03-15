@@ -11,9 +11,10 @@ const welcomeStyles = StyleSheet.create({
   },
   welcomeText: {
     fontFamily: "IBMPlexSansRegular",
-    fontSize: SIZES.xxLarge - 5,
+    fontSize: SIZES.xxLarge - 6,
     marginTop: 10,
     color: "red",
+    marginHorizontal: 12,
   },
 });
 
