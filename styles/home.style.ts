@@ -3,7 +3,7 @@ import { COLORS, SIZES } from "../constants";
 
 const homeStyles = StyleSheet.create({
   textStyle: {
-    fontFamily: "bold",
+    fontFamily: "IBMPlexSansBold",
     fontSize: 40,
   },
   appBarWrapper: {
@@ -16,7 +16,7 @@ const homeStyles = StyleSheet.create({
     alignItems: "center",
   },
   location: {
-    fontFamily: "SemiBold",
+    fontFamily: "IBMPlexSansSemiBold",
     fontSize: SIZES.medium,
     color: COLORS.gray,
   },
@@ -32,7 +32,7 @@ const homeStyles = StyleSheet.create({
     position: "absolute",
   },
   cartNumber: {
-    fontFamily: "Regular",
+    fontFamily: "IBMPlexSansRegular",
     color: COLORS.lightWhite,
     fontWeight: "600",
     fontSize: SIZES.small,

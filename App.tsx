@@ -15,10 +15,10 @@ const Stack = createBottomTabNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Regular: require("./assets/fonts/IBMPlexSans-Regular.ttf"),
-    Light: require("./assets/fonts/IBMPlexSans-Light.ttf"),
-    Bold: require("./assets/fonts/IBMPlexSans-Bold.ttf"),
-    SemiBold: require("./assets/fonts/IBMPlexSans-SemiBold.ttf"),
+    IBMPlexSansRegular: require("./assets/fonts/IBMPlexSans-Regular.ttf"),
+    IBMPlexSansLight: require("./assets/fonts/IBMPlexSans-Light.ttf"),
+    IBMPlexSansBold: require("./assets/fonts/IBMPlexSans-Bold.ttf"),
+    IBMPlexSansSemiBold: require("./assets/fonts/IBMPlexSans-SemiBold.ttf"),
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {

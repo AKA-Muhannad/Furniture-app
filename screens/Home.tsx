@@ -6,6 +6,7 @@ import homeStyle from "../styles/home.style";
 import { Ionicons, Fontisto } from "@expo/vector-icons";
 import styles from "react-native-webview/lib/WebView.styles";
 import { TouchableOpacity } from "react-native";
+import { Welcome } from "../components";
 
 export default function Home() {
   return (
@@ -24,7 +25,9 @@ export default function Home() {
           </View>
         </View>
       </View>
-      <ScrollView></ScrollView>
+      <ScrollView>
+        <Welcome></Welcome>
+      </ScrollView>
     </SafeAreaView>
   );
 }
