@@ -1,9 +1,9 @@
 import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, SIZES } from "../constants";
-import { Feather } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 
-export function SearchBarView() {
+export default function SearchBarView() {
   return (
     <View style={styles.searchContainer}>
       <TouchableOpacity>
@@ -16,6 +16,15 @@ export function SearchBarView() {
           placeholder={"What are you looking for?"}
           style={styles.searchInput}
         ></TextInput>
+      </View>
+      <View>
+        <TouchableOpacity>
+          <Ionicons
+            name={"camera-outline"}
+            size={SIZES.xLarge}
+            color={COLORS.primary}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -48,5 +57,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: SIZES.small,
+  },
+  searchBtn: {
+    width: 50,
+    height: "100%",
+    borderRadius: SIZES.medium,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: COLORS.primary,
   },
 });

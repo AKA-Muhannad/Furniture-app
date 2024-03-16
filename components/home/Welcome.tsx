@@ -1,10 +1,11 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import welcomeStyles from "../../styles/welcome.style";
 import { COLORS, SIZES } from "../../constants";
 import welcomeStyle from "../../styles/welcome.style";
-import { SearchBarView } from "../../my-custom-components/SearchBarView";
+import SearchBarView from "../../my-custom-components/SearchBarView";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Welcome() {
   return (

@@ -7,26 +7,14 @@ import { Ionicons, Fontisto } from "@expo/vector-icons";
 import styles from "react-native-webview/lib/WebView.styles";
 import { TouchableOpacity } from "react-native";
 import { Welcome } from "../components";
+import AppBar from "../components/home/AppBar";
 
 export default function Home() {
   return (
     <SafeAreaView>
-      <View style={homeStyles.appBarWrapper}>
-        <View style={homeStyle.appBar}>
-          <Ionicons name={"location-outline"} size={24} />
-          <Text style={homeStyles.location}>Shanghai China</Text>
-          <View style={{ alignItems: "flex-end" }}>
-            <View style={homeStyles.cartCount}>
-              <Text style={homeStyles.cartNumber}>8</Text>
-            </View>
-            <TouchableOpacity>
-              <Fontisto name={"shopping-bag"} size={24} />
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
       <ScrollView>
-        <Welcome></Welcome>
+        <AppBar />
+        <Welcome />
       </ScrollView>
     </SafeAreaView>
   );
