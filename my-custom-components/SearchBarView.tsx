@@ -3,7 +3,14 @@ import React from "react";
 import { COLORS, SIZES } from "../constants";
 import { Feather, Ionicons } from "@expo/vector-icons";
 
-export default function SearchBarView() {
+type Props = {
+  value?: string;
+  onPressIn: () => any;
+  placeholder?: string;
+  style?: StyleSheet;
+};
+
+export default function SearchBarView(props: Props) {
   return (
     <View style={styles.searchContainer}>
       <TouchableOpacity>
@@ -11,18 +18,18 @@ export default function SearchBarView() {
       </TouchableOpacity>
       <View style={styles.searchWrapper}>
         <TextInput
-          value=""
-          onPressIn={() => {}}
+          value={props.value}
+          onPressIn={props.onPressIn}
           placeholder={"What are you looking for?"}
           style={styles.searchInput}
         ></TextInput>
       </View>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.searchBtn}>
           <Ionicons
             name={"camera-outline"}
             size={SIZES.xLarge}
-            color={COLORS.primary}
+            color={COLORS.offwhite}
           />
         </TouchableOpacity>
       </View>
@@ -61,7 +68,7 @@ const styles = StyleSheet.create({
   searchBtn: {
     width: 50,
     height: "100%",
-    borderRadius: SIZES.medium,
+    borderRadius: SIZES.large,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: COLORS.primary,
