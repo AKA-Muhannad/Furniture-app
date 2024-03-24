@@ -2,38 +2,46 @@ import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, SIZES } from "../constants";
 import { Feather, Ionicons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type Props = {
   value?: string;
   onPressIn: () => any;
   placeholder?: string;
   style?: StyleSheet;
+  iconName: string;
 };
 
 export default function SearchBarView(props: Props) {
   return (
-    <View style={styles.searchContainer}>
-      <TouchableOpacity>
-        <Feather name={"search"} size={24} style={styles.searchIcon}></Feather>
-      </TouchableOpacity>
-      <View style={styles.searchWrapper}>
-        <TextInput
-          value={props.value}
-          onPressIn={props.onPressIn}
-          placeholder={"What are you looking for?"}
-          style={styles.searchInput}
-        ></TextInput>
-      </View>
-      <View>
-        <TouchableOpacity style={styles.searchBtn}>
-          <Ionicons
-            name={"camera-outline"}
-            size={SIZES.xLarge}
-            color={COLORS.offwhite}
-          />
+    <SafeAreaView>
+      <View style={styles.searchContainer}>
+        <TouchableOpacity>
+          <Feather
+            name={"search"}
+            size={24}
+            style={styles.searchIcon}
+          ></Feather>
         </TouchableOpacity>
+        <View style={styles.searchWrapper}>
+          <TextInput
+            value={props.value}
+            onPressIn={props.onPressIn}
+            placeholder={"What are you looking for?"}
+            style={styles.searchInput}
+          ></TextInput>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.searchBtn}>
+            <Ionicons
+              name={props.iconName as any}
+              size={SIZES.xLarge}
+              color={COLORS.offwhite}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -44,7 +52,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: COLORS.secondary,
     borderRadius: SIZES.medium,
-    marginVertical: SIZES.medium,
     height: 50,
     marginStart: 10,
     marginEnd: 10,

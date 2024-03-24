@@ -49,7 +49,10 @@ export default function Welcome() {
           Luxurious Furniture
         </Text>
       </View>
-      <SearchBarView onPressIn={() => navigation.navigate("Search")} />
+      <SearchBarView
+        onPressIn={() => navigation.navigate("Search")}
+        iconName={"camera"}
+      />
     </View>
   );
 }
