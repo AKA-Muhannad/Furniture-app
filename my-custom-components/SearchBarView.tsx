@@ -3,6 +3,7 @@ import React from "react";
 import { COLORS, SIZES } from "../constants";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { searchBarViewStyle } from "../styles/SearchBarView.style";
 
 type Props = {
   value?: string;
@@ -15,24 +16,24 @@ type Props = {
 export default function SearchBarView(props: Props) {
   return (
     <SafeAreaView>
-      <View style={styles.searchContainer}>
+      <View style={searchBarViewStyle.searchContainer}>
         <TouchableOpacity>
           <Feather
             name={"search"}
             size={24}
-            style={styles.searchIcon}
+            style={searchBarViewStyle.searchIcon}
           ></Feather>
         </TouchableOpacity>
-        <View style={styles.searchWrapper}>
+        <View style={searchBarViewStyle.searchWrapper}>
           <TextInput
             value={props.value}
             onPressIn={props.onPressIn}
             placeholder={"What are you looking for?"}
-            style={styles.searchInput}
+            style={searchBarViewStyle.searchInput}
           ></TextInput>
         </View>
         <View>
-          <TouchableOpacity style={styles.searchBtn}>
+          <TouchableOpacity style={searchBarViewStyle.searchBtn}>
             <Ionicons
               name={props.iconName as any}
               size={SIZES.xLarge}
@@ -44,40 +45,3 @@ export default function SearchBarView(props: Props) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  searchContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: COLORS.secondary,
-    borderRadius: SIZES.medium,
-    height: 50,
-    marginStart: 10,
-    marginEnd: 10,
-  },
-  searchIcon: {
-    marginHorizontal: 10,
-    color: COLORS.gray,
-  },
-  searchWrapper: {
-    flex: 1,
-    backgroundColor: COLORS.secondary,
-    marginRight: SIZES.small,
-    borderRadius: SIZES.small,
-  },
-  searchInput: {
-    fontFamily: "IBMPlexSansRegular",
-    width: "100%",
-    height: "100%",
-    paddingHorizontal: SIZES.small,
-  },
-  searchBtn: {
-    width: 50,
-    height: "100%",
-    borderRadius: SIZES.large,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: COLORS.primary,
-  },
-});

@@ -1,9 +1,9 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import welcomeStyles from "../../styles/welcome.style";
+import welcomeStyles from "../../styles/Welcome.style";
 import { COLORS, SIZES } from "../../constants";
-import welcomeStyle from "../../styles/welcome.style";
+import welcomeStyle from "../../styles/Welcome.style";
 import SearchBarView from "../../my-custom-components/SearchBarView";
 import { Ionicons } from "@expo/vector-icons";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
@@ -51,7 +51,7 @@ export default function Welcome() {
       </View>
       <SearchBarView
         onPressIn={() => navigation.navigate("Search")}
-        iconName={"camera"}
+        iconName={"camera-outline"}
       />
     </View>
   );
