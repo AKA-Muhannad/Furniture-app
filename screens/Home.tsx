@@ -9,6 +9,7 @@ import { TouchableOpacity } from "react-native";
 import { Welcome } from "../components";
 import AppBar from "../components/home/AppBar";
 import Carsoul from "../components/home/Carsoul";
+import { Headings } from "../components/home/Headings";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <AppBar />
         <Welcome />
         <Carsoul />
+        <Headings />
       </ScrollView>
     </SafeAreaView>
   );
