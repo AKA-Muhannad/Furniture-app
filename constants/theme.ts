@@ -52,4 +52,13 @@ const SHADOWS = {
   },
 };
 
-export { COLORS, SIZES, SHADOWS };
+const IMAGES_NETWORK = {
+  homeImageNetwork1:
+    "https://resource.rentcafe.com/image/upload/x_0,y_882,w_6960,h_3758,c_crop/q_auto,f_auto,c_lfill,w_1920,ar_1.9753086419753088,g_auto/s3/3/1029306/couchwithtrinkets.jpg",
+  homeImageNetwork2:
+    "https://www.barretts.co.uk/wp-content/uploads/2023/04/spacejoy-YnLJ3rM4VtI-unsplash-2160x1215.jpg",
+  homeImageNetwork3:
+    "https://i.etsystatic.com/42742601/r/il/2862b4/4823372672/il_1588xN.4823372672_th5k.jpg",
+};
+
+export { COLORS, SIZES, SHADOWS, IMAGES_NETWORK };

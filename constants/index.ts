@@ -1,3 +1,3 @@
-import { COLORS, SIZES, SHADOWS } from "./theme";
+import { COLORS, SIZES, SHADOWS, IMAGES_NETWORK } from "./theme";
 
-export { COLORS, SIZES, SHADOWS };
+export { COLORS, SIZES, SHADOWS, IMAGES_NETWORK };
