@@ -10,6 +10,7 @@ import { Welcome } from "../components";
 import AppBar from "../components/home/AppBar";
 import Carsoul from "../components/home/Carsoul";
 import { Headings } from "../components/home/Headings";
+import ProductRow from "../components/products/ProductRow";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Welcome />
         <Carsoul />
         <Headings />
+        <ProductRow />
       </ScrollView>
     </SafeAreaView>
   );
