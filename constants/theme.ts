@@ -16,6 +16,10 @@ const COLORS = {
   red: "#e814d",
   green: " #00C135",
   lightWhite: "#FAFAFC",
+
+  // My colors
+  lightBlack1: "#000000B0",
+  lightBlack2: "#000000CB",
 };
 
 const SIZES = {

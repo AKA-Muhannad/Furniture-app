@@ -2,7 +2,12 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ProductDetailsStyle } from "../styles/ProductDetails.style";
-import { Ionicons, SimpleLineIcons } from "@expo/vector-icons";
+import {
+  Ionicons,
+  SimpleLineIcons,
+  MaterialCommunityIcons,
+  Fontisto,
+} from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, IMAGES_NETWORK, SIZES } from "../constants";
 
@@ -63,6 +68,39 @@ export default function ProductDetails() {
         <View style={ProductDetailsStyle.descriptionWrapper}>
           <Text style={ProductDetailsStyle.description}>Description</Text>
           <Text style={ProductDetailsStyle.descriptionText}>{someText}</Text>
+        </View>
+        <View style={{ marginBottom: SIZES.small }}>
+          <View style={ProductDetailsStyle.location}>
+            <View style={{ flexDirection: "row" }}>
+              <Ionicons name={"location-outline"} size={20} />
+              <Text style={{ paddingHorizontal: 5.5 }}>Dallas</Text>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name={"truck-delivery-outline"}
+                size={20}
+              />
+              <Text style={{ paddingHorizontal: 5.5 }}>Free Delivery</Text>
+            </View>
+          </View>
+        </View>
+        <View style={ProductDetailsStyle.cartRow}>
+          <TouchableOpacity
+            onPress={() => {}}
+            style={ProductDetailsStyle.cartBtn}
+          >
+            <Text style={ProductDetailsStyle.cartTitle}>BUY NOW</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {}}
+            style={ProductDetailsStyle.addCart}
+          >
+            <Fontisto
+              name={"shopping-bag"}
+              size={22}
+              color={COLORS.lightWhite}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
