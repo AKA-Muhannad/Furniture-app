@@ -21,8 +21,8 @@ export default function ProductDetails() {
   };
 
   return (
-    <View style={ProductDetailsStyle.productDetailsContainer}>
-      <View style={ProductDetailsStyle.productDetailsUpperRow}>
+    <View style={ProductDetailsStyle.container}>
+      <View style={ProductDetailsStyle.upperRow}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name={"chevron-back-circle"} size={30} />
         </TouchableOpacity>
@@ -32,45 +32,37 @@ export default function ProductDetails() {
       </View>
       <Image
         source={{ uri: IMAGES_NETWORK.homeImageNetwork2 }}
-        style={ProductDetailsStyle.productDetailsImage}
+        style={ProductDetailsStyle.image}
       />
       {/*From here it starts the view for the product name and product price in the same row*/}
-      <View style={ProductDetailsStyle.productDetailsInfo}>
-        <View style={ProductDetailsStyle.productDetailsTitleRow}>
-          <Text style={ProductDetailsStyle.productDetailsTitle}>Product</Text>
-          <View style={ProductDetailsStyle.productDetailsPriceWrapper}>
-            <Text style={ProductDetailsStyle.productDetailsPrice}>$660.33</Text>
+      <View style={ProductDetailsStyle.info}>
+        <View style={ProductDetailsStyle.titleRow}>
+          <Text style={ProductDetailsStyle.title}>Product</Text>
+          <View style={ProductDetailsStyle.priceWrapper}>
+            <Text style={ProductDetailsStyle.price}>$660.33</Text>
           </View>
           {/*From here it ends the view for the product name and product price in the same row*/}
         </View>
-        <View style={ProductDetailsStyle.productDetailsRatingRow}>
-          <View style={ProductDetailsStyle.productDetailsRating}>
+        <View style={ProductDetailsStyle.ratingRow}>
+          <View style={ProductDetailsStyle.rating}>
             {[1, 2, 3, 4, 5].map((index) => (
               <Ionicons name={"star"} key={index} size={24} color={"gold"} />
             ))}
-            <Text style={ProductDetailsStyle.productDetailsRatingText}>
-              (4.9)
-            </Text>
+            <Text style={ProductDetailsStyle.ratingText}>(4.9)</Text>
           </View>
-          <View style={ProductDetailsStyle.productDetailsRating}>
+          <View style={ProductDetailsStyle.rating}>
             <TouchableOpacity onPress={() => increment()}>
               <SimpleLineIcons name={"plus"} size={20} />
             </TouchableOpacity>
-            <Text style={ProductDetailsStyle.productDetailsRatingText}>
-              {count}
-            </Text>
+            <Text style={ProductDetailsStyle.ratingText}>{count}</Text>
             <TouchableOpacity onPress={() => decrement()}>
               <SimpleLineIcons name={"minus"} size={20} />
             </TouchableOpacity>
           </View>
         </View>
-        <View style={ProductDetailsStyle.productDetailsDescriptionWrapper}>
-          <Text style={ProductDetailsStyle.productDetailsDescription}>
-            Description
-          </Text>
-          <Text style={ProductDetailsStyle.productDetailsDescriptionText}>
-            {someText}
-          </Text>
+        <View style={ProductDetailsStyle.descriptionWrapper}>
+          <Text style={ProductDetailsStyle.description}>Description</Text>
+          <Text style={ProductDetailsStyle.descriptionText}>{someText}</Text>
         </View>
       </View>
     </View>

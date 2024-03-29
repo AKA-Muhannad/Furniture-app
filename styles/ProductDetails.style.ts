@@ -2,10 +2,10 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES } from "../constants";
 
 export const ProductDetailsStyle = StyleSheet.create({
-  productDetailsContainer: {
+  container: {
     flex: 1,
   },
-  productDetailsUpperRow: {
+  upperRow: {
     marginHorizontal: SIZES.large,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -15,11 +15,11 @@ export const ProductDetailsStyle = StyleSheet.create({
     width: SIZES.width - 44,
     zIndex: 999,
   },
-  productDetailsImage: {
+  image: {
     aspectRatio: 1,
     resizeMode: "cover",
   },
-  productDetailsInfo: {
+  info: {
     marginTop: -SIZES.large,
     backgroundColor: COLORS.lightWhite,
     // this is only for tracing😝
@@ -29,7 +29,7 @@ export const ProductDetailsStyle = StyleSheet.create({
     borderTopRightRadius: SIZES.medium,
     paddingBottom: 500, // to take the full color in the page
   },
-  productDetailsTitleRow: {
+  titleRow: {
     marginHorizontal: 20,
     paddingBottom: SIZES.small,
     flexDirection: "row",
@@ -38,20 +38,20 @@ export const ProductDetailsStyle = StyleSheet.create({
     width: SIZES.width - 44,
     top: 20,
   },
-  productDetailsTitle: {
+  title: {
     fontFamily: "IBMPlexSansBold",
     fontSize: SIZES.large,
   },
-  productDetailsPriceWrapper: {
+  priceWrapper: {
     backgroundColor: COLORS.secondary,
     borderRadius: SIZES.large,
   },
-  productDetailsPrice: {
+  price: {
     fontFamily: "IBMPlexSansSemiBold",
     paddingHorizontal: 10,
     fontSize: SIZES.large,
   },
-  productDetailsRatingRow: {
+  ratingRow: {
     paddingBottom: SIZES.small,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -59,29 +59,29 @@ export const ProductDetailsStyle = StyleSheet.create({
     width: SIZES.width - 10,
     top: 5,
   },
-  productDetailsRating: {
+  rating: {
     top: SIZES.large,
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
     marginHorizontal: SIZES.large,
   },
-  productDetailsRatingText: {
+  ratingText: {
     marginStart: 10,
     marginEnd: 10,
     color: COLORS.gray,
     fontFamily: "IBMPlexSansRegular",
   },
-  productDetailsDescription: {
+  description: {
     fontFamily: "IBMPlexSansRegular",
     fontWeight: "bold",
     fontSize: SIZES.large - 1,
   },
-  productDetailsDescriptionWrapper: {
+  descriptionWrapper: {
     marginTop: SIZES.large * 2,
     marginHorizontal: SIZES.large,
   },
-  productDetailsDescriptionText: {
+  descriptionText: {
     fontFamily: "IBMPlexSansRegular",
     fontSize: SIZES.medium,
     textAlign: "justify",
