@@ -5,10 +5,20 @@ import { ProductDetailsStyle } from "../styles/ProductDetails.style";
 import { Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, IMAGES_NETWORK, SIZES } from "../constants";
-import styles from "react-native-webview/lib/WebView.styles";
+
+const someText: string =
+  "ffojewopfwjefopwekfopwefkwefpoewfjmwkflnsdoklgmvwopsdlv;kfweopsdl;c,.xofepdlakc,.xopfeld;msc,zxpoewfsd;zcx\n";
 
 export default function ProductDetails() {
   const navigation = useNavigation();
+  const [count, setCount] = useState(1);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    if (count > 1) setCount(count - 1);
+  };
 
   return (
     <View style={ProductDetailsStyle.productDetailsContainer}>
@@ -38,21 +48,29 @@ export default function ProductDetails() {
             {[1, 2, 3, 4, 5].map((index) => (
               <Ionicons name={"star"} key={index} size={24} color={"gold"} />
             ))}
-            <Text style={ProductDetailsStyle.productDetailRatingText}>
+            <Text style={ProductDetailsStyle.productDetailsRatingText}>
               (4.9)
             </Text>
           </View>
           <View style={ProductDetailsStyle.productDetailsRating}>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => increment()}>
               <SimpleLineIcons name={"plus"} size={20} />
             </TouchableOpacity>
-            <Text style={ProductDetailsStyle.productDetailRatingText}>
+            <Text style={ProductDetailsStyle.productDetailsRatingText}>
               {count}
             </Text>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => decrement()}>
               <SimpleLineIcons name={"minus"} size={20} />
             </TouchableOpacity>
           </View>
+        </View>
+        <View style={ProductDetailsStyle.productDetailsDescriptionWrapper}>
+          <Text style={ProductDetailsStyle.productDetailsDescription}>
+            Description
+          </Text>
+          <Text style={ProductDetailsStyle.productDetailsDescriptionText}>
+            {someText}
+          </Text>
         </View>
       </View>
     </View>

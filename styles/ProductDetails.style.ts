@@ -6,7 +6,7 @@ export const ProductDetailsStyle = StyleSheet.create({
     flex: 1,
   },
   productDetailsUpperRow: {
-    marginHorizontal: 20,
+    marginHorizontal: SIZES.large,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -66,10 +66,25 @@ export const ProductDetailsStyle = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: SIZES.large,
   },
-  productDetailRatingText: {
+  productDetailsRatingText: {
     marginStart: 10,
     marginEnd: 10,
     color: COLORS.gray,
     fontFamily: "IBMPlexSansRegular",
+  },
+  productDetailsDescription: {
+    fontFamily: "IBMPlexSansRegular",
+    fontWeight: "bold",
+    fontSize: SIZES.large - 1,
+  },
+  productDetailsDescriptionWrapper: {
+    marginTop: SIZES.large * 2,
+    marginHorizontal: SIZES.large,
+  },
+  productDetailsDescriptionText: {
+    fontFamily: "IBMPlexSansRegular",
+    fontSize: SIZES.medium,
+    textAlign: "justify",
+    marginBottom: SIZES.small,
   },
 });
